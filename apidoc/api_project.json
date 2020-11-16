@@ -1,0 +1,16 @@
+{
+  "name": "dongwn",
+  "version": "3.1.0",
+  "description": "董维宁接口服务文档",
+  "title": "dongwn",
+  "url": "http://localhost:7001",
+  "sampleUrl": false,
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "apidoc",
+    "time": "2020-11-16T02:26:49.140Z",
+    "url": "https://apidocjs.com",
+    "version": "0.25.0"
+  }
+}
