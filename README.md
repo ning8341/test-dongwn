@@ -3,14 +3,23 @@
 apidoc -i app/ -o apidoc/
 
 ### 文档查看地址
-file:///E:/node-workspace/test-dongwn/apidoc/index.html
+eg: file:///E:/node-workspace/test-dongwn/apidoc/index.html
 
 
 ## QuickStart
 
 <!-- add docs here for user -->
 
-see [egg docs][egg] for more detail.
+git clone https://github.com/ning8341/test-dongwn
+或者直接下载zip包
+
+## 线上地址
+
+<!-- add docs here for user -->
+
+[线上地址](http://www.dongwn.icu)
+
+看情况，可能开个人blog也可能展示这个node调用的第三方聊天的小程序
 
 ### Development
 

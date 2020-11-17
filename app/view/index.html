@@ -40,9 +40,7 @@
     //动态设定窗口位置
     $(document).ready(function () {
       let width = $(window).width();
-
       let target = (width - 360) / 2 + 'px !important;'
-      console.log('=====================', target)
       $(".chat").css("margin-left", target)
     })
 
@@ -63,7 +61,6 @@
       if (msg.length > 0) {
         var sendhtml = '<li class="t2"><img src="/public/images/head2.jpg"><div class="txt">' + msg + '</div></li>';
         $("#ui_msg_box").append(sendhtml);
-        // 将展示消息的滚动条滑到底部
         scrollMsgBottom();
         sendMsg(msg)
       }
@@ -82,7 +79,6 @@
           let msg = data.object;
           var sendhtml = '<li class="t1"><img src="/public/images/head1.jpg"><div class="txt">' + msg + '</div></li>';
           $("#ui_msg_box").append(sendhtml);
-          // 将展示消息的滚动条滑到底部
           scrollMsgBottom();
 
         }

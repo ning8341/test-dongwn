@@ -1,8 +1,6 @@
 const Controller = require('egg').Controller;
 const uuid = require('uuid')
 
-
-
 class UserController extends Controller {
   /**
 * @api {get} /api/user 用户列表信息获取
