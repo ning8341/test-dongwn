@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 1688828 */
+  src: url('../fonts/font_1688828_rr9taomp5q.eot');
+  src: url('../fonts/font_1688828_rr9taomp5q.eot') format('embedded-opentype'),
+  url('../fonts/font_1688828_rr9taomp5q.woff2') format('woff2'),
+  url('../fonts/font_1688828_rr9taomp5q.woff') format('woff'),
+  url('../fonts/font_1688828_rr9taomp5q.ttf') format('truetype'),
+  url('../fonts/font_1688828_rr9taomp5q.svg#iconfont') format('svg');
+}
+.iconfont{font-family:"iconfont"}

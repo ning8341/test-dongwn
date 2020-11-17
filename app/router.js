@@ -5,7 +5,8 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  //router.get('/list', controller.user.index);
-  
+  router.get('/', controller.home.index);
+
   require('./router/dongwn')(app);
+  require('./router/robot')(app);
 };

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="/public/css/custom.css" rel="stylesheet" type="text/css">
+  <link href="/public/css/style.css" rel="stylesheet" type="text/css">
+  <link href="/public/css/style_icon.css" rel="stylesheet" type="text/css">
+  <link href="/public/css/global.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="/public/js/jquery.min.js"></script>
+
+</head>
+<title>dongwn-机器人</title>
+
+<body>
+
+<!-- 机器人 -->
+  <div class="ui_guide main" id="guide">
+    <div class="chat">
+      <div class="title">人工智能聊天</div>
+      <ul class="text" id="ui_msg_box">
+        <li class="t1">
+          <img src="/public/images/head1.jpg">
+          <div class="txt">您好！我是菲菲，非常欢迎您的到来，有什么想和我聊聊的吗？</div>
+        </li>
+        <!-- <li class="t2"><img src="/public/images/head2.jpg">
+          <div class="txt">你好</div>
+        </li> -->
+
+      </ul>
+      <div class="cont">
+        <input type="text" placeholder="在这里输入文字" class="inp" id="ui_inp_msg">
+        <a href="javascript:" class="send" id="send">发送</a>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+
+    //动态设定窗口位置
+    $(document).ready(function () {
+      let width = $(window).width();
+
+      let target = (width - 360) / 2 + 'px !important;'
+      console.log('=====================', target)
+      $(".chat").css("margin-left", target)
+    })
+
+    $(document).keyup(function (event) {
+      if (event.keyCode == 13) {
+        preSend()
+      }
+    });
+
+
+    $('#send').bind('click', function () {
+      preSend()
+    })
+
+    function preSend() {
+      var msg = $('#ui_inp_msg').val()
+      $("#ui_inp_msg").val("");
+      if (msg.length > 0) {
+        var sendhtml = '<li class="t2"><img src="/public/images/head2.jpg"><div class="txt">' + msg + '</div></li>';
+        $("#ui_msg_box").append(sendhtml);
+        // 将展示消息的滚动条滑到底部
+        scrollMsgBottom();
+        sendMsg(msg)
+      }
+    }
+
+
+    function sendMsg(msg) {
+      $.ajax({
+        //async: false,
+        type: 'GET',
+        url: '/api/robot/' + msg,
+        contentType: 'application/json',
+        timeout: 10000,
+        dataType: 'json',
+        success: function (data) {
+          let msg = data.object;
+          var sendhtml = '<li class="t1"><img src="/public/images/head1.jpg"><div class="txt">' + msg + '</div></li>';
+          $("#ui_msg_box").append(sendhtml);
+          // 将展示消息的滚动条滑到底部
+          scrollMsgBottom();
+
+        }
+
+      })
+    }
+
+    // 将聊天消息的滚动条滑到底部
+    function scrollMsgBottom() {
+      var topH = -$("#ui_msg_box").height();
+      $("#ui_msg_box>li").each(function () {
+        topH += $(this).outerHeight(true);
+      });
+      $("#ui_msg_box").animate({ scrollTop: topH }, 200);
+    }
+
+  </script>
+</body>
+
+</html>

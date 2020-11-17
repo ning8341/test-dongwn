@@ -51,6 +51,13 @@ module.exports = appInfo => {
     timezone: '+08:00'
   };
 
+  config.view = {
+    defaultViewEngine: 'nunjucks',
+    mapping: {
+      '.html': 'nunjucks',
+    },
+  }
+
 
   return {
     ...config,
