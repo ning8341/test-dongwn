@@ -1,6 +1,8 @@
 # test-dongwn
 ### 生成文档的命令,全局安装好apidoc
 apidoc -i app/ -o apidoc/
+开启了egg框架封装好的定时任务，简单demo
+在路径/app/schdule/schdule.js自行参考
 
 ### 文档查看地址
 eg: file:///E:/node-workspace/test-dongwn/apidoc/index.html
