@@ -22,6 +22,7 @@ git clone https://github.com/ning8341/test-dongwn
 [线上地址](http://www.dongwn.icu)
 
 看情况，可能开个人blog也可能展示这个node调用的第三方聊天的小程序
+请原谅我的服务器性能，跑一个java程序，再跑这个node的机器人跑不动了
 
 ### Development
 
